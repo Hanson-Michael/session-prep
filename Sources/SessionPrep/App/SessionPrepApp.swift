@@ -84,6 +84,15 @@ struct SessionPrepApp: App {
 /// than lingering as a dock-only background process, matching the rest of
 /// the series' behavior.
 final class AppDelegate: NSObject, NSApplicationDelegate {
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        // Touching .shared here (rather than waiting for the Help menu to be
+        // opened) is what actually creates the SPUStandardUpdaterController
+        // and starts Sparkle's background update-check timer — without this,
+        // "Automatically Check for Updates" silently does nothing until the
+        // user happens to open the Help menu first.
+        _ = UpdateChecker.shared
+    }
+
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         true
     }
