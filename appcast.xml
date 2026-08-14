@@ -24,6 +24,26 @@
         <language>en</language>
 
         <item>
+            <title>Version 26.8 (build 5)</title>
+            <sparkle:version>5</sparkle:version>
+            <sparkle:shortVersionString>26.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.5</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Reworking: Select Folder</li>
+                    <li>Reworking: All output files will convert to WAV.</li>
+                </ul>
+            ]]></description>
+            <pubDate>Fri, 14 Aug 2026 14:52:45 +0000</pubDate>
+            <enclosure
+                url="https://github.com/Hanson-Michael/session-prep/releases/download/v26.8-5/SessionPrep-26.8-5.zip"
+                sparkle:edSignature="za9iaupT4Eo5C41GuAW3rgmkUWeqKMxiOJ+Uwy5SIKXnPQ9EpN81oaDIqJkoXXYdu+vuarxx9nD2CxlNP8xPCQ=="
+                length="11135354"
+                type="application/octet-stream" />
+        </item>
+
+
+        <item>
             <title>Version 26.8 (build 4)</title>
             <sparkle:version>4</sparkle:version>
             <sparkle:shortVersionString>26.8</sparkle:shortVersionString>
