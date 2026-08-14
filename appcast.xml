@@ -23,24 +23,22 @@
         <description>Update feed for Session Prep.</description>
         <language>en</language>
 
-        <!-- Example item — copy this shape for each release:
         <item>
-            <title>Version 1.1</title>
-            <sparkle:version>2</sparkle:version>
-            <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
+            <title>Version 26.8</title>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>26.8</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <description><![CDATA[
                 <ul>
-                    <li>Release notes go here.</li>
+                    <li>Something.</li>
                 </ul>
             ]]></description>
             <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
             <enclosure
-                url="https://github.com/Hanson-Michael/session-prep/releases/download/v1.1/SessionPrep-1.1.zip"
-                sparkle:edSignature="BASE64_SIGNATURE_FROM_sign_update"
-                length="1234567"
+                url="https://github.com/Hanson-Michael/session-prep/releases/download/v26.8/SessionPrep-26.8.zip"
+                sparkle:edSignature="KU/GTMs2tBM4wmb7SYzSOtjAE7rsLqtKPzifNBUVmD8FJptLaPSbte6LY4zPQ2ZeHH2qD3D9zttv5WFRaN6HCQ=="
+                length="11054174"
                 type="application/octet-stream" />
         </item>
-        -->
     </channel>
 </rss>
