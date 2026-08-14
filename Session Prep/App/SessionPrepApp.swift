@@ -36,7 +36,10 @@ struct SessionPrepApp: App {
                 }
                 Toggle("Automatically Check for Updates", isOn: Binding(
                     get: { AppSettings.shared.automaticallyCheckForUpdates },
-                    set: { AppSettings.shared.automaticallyCheckForUpdates = $0 }
+                    set: {
+                        AppSettings.shared.automaticallyCheckForUpdates = $0
+                        UpdateChecker.shared.setAutomaticallyChecksForUpdates($0)
+                    }
                 ))
             }
         }

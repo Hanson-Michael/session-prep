@@ -1,21 +1,39 @@
 import Foundation
 import AppKit
+import Sparkle
 
-/// Placeholder until Sparkle is wired in (see README.md). Keeps the Help
-/// menu fully functional now, structured the way Sparkle's checkForUpdates
-/// flow will eventually slot in — swap the body of `check(manual:)` for
-/// real SPUStandardUpdaterController calls once Sparkle is added as a
-/// package dependency.
-final class UpdateChecker {
+/// Thin wrapper around Sparkle's SPUStandardUpdaterController. `.shared` is
+/// first touched at app launch (SessionPrepApp's Help menu references it
+/// immediately), which is what actually creates the controller and starts
+/// Sparkle's own scheduled background-check timer — driven by
+/// `updater.automaticallyChecksForUpdates`, kept in sync with
+/// AppSettings.automaticallyCheckForUpdates via
+/// `setAutomaticallyChecksForUpdates(_:)` below. No separate silent-check
+/// call is needed the way the old placeholder anticipated; Sparkle handles
+/// that internally once started.
+final class UpdateChecker: NSObject {
     static let shared = UpdateChecker()
-    private init() {}
 
+    private let controller: SPUStandardUpdaterController
+
+    private override init() {
+        controller = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
+        super.init()
+        controller.updater.automaticallyChecksForUpdates = AppSettings.shared.automaticallyCheckForUpdates
+    }
+
+    /// `manual` is kept for call-site compatibility with the Help menu's
+    /// "Check for Updates…" item, which always passes `true` — Sparkle
+    /// handles silent background checks on its own timer, so this method is
+    /// only ever meant for the explicit, UI-visible check.
     func check(manual: Bool) {
-        guard manual else { return } // no silent startup check until Sparkle is wired in
-        let alert = NSAlert()
-        alert.messageText = "Update Checking Not Yet Configured"
-        alert.informativeText = "Auto-update via Sparkle hasn't been wired in yet — see README.md for the next step."
-        alert.alertStyle = .informational
-        alert.runModal()
+        guard manual else { return }
+        controller.checkForUpdates(nil)
+    }
+
+    /// Called from the "Automatically Check for Updates" toggle so Sparkle's
+    /// own scheduling stays in sync with the persisted AppSettings value.
+    func setAutomaticallyChecksForUpdates(_ enabled: Bool) {
+        controller.updater.automaticallyChecksForUpdates = enabled
     }
 }

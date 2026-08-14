@@ -28,5 +28,9 @@
 	<string>Session Prep needs access to scan the audio folder you select.</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.music</string>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/Hanson-Michael/session-prep/main/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>GLhkauDztD78r7uUzKZIgqj95cEUGFSAfUqCj8xnBD8=</string>
 </dict>
 </plist>

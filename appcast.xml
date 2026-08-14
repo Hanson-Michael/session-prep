@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sparkle update feed for Session Prep, tracked in the repo and served raw
+  at https://raw.githubusercontent.com/Hanson-Michael/session-prep/main/appcast.xml
+  (see SUFeedURL in Info.plist / project.pbxproj build settings).
+
+  To publish a new release:
+  1. Bump MARKETING_VERSION (sparkle:shortVersionString) and
+     CURRENT_PROJECT_VERSION (sparkle:version) in Xcode.
+  2. Archive, export a Developer ID-signed + notarized build, zip the .app.
+  3. Sign the zip: run `sign_update` (same Sparkle bin/ folder as
+     generate_keys) against the zip — it prints the sparkle:edSignature and
+     length values below.
+  4. Upload the zip to a new GitHub Release (tag it e.g. v1.1).
+  5. Add a new <item> below, newest first, pointing enclosure url at that
+     release asset's download URL.
+  6. Commit and push this file to main.
+-->
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Session Prep</title>
+        <link>https://raw.githubusercontent.com/Hanson-Michael/session-prep/main/appcast.xml</link>
+        <description>Update feed for Session Prep.</description>
+        <language>en</language>
+
+        <!-- Example item — copy this shape for each release:
+        <item>
+            <title>Version 1.1</title>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Release notes go here.</li>
+                </ul>
+            ]]></description>
+            <pubDate>Thu, 13 Aug 2026 00:00:00 +0000</pubDate>
+            <enclosure
+                url="https://github.com/Hanson-Michael/session-prep/releases/download/v1.1/SessionPrep-1.1.zip"
+                sparkle:edSignature="BASE64_SIGNATURE_FROM_sign_update"
+                length="1234567"
+                type="application/octet-stream" />
+        </item>
+        -->
+    </channel>
+</rss>
