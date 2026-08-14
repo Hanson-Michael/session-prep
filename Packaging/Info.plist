@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Reference copy only — the real Xcode target (Session Prep.xcodeproj) generates
+  its own Info.plist from INFOPLIST_KEY_* build settings and does not read this
+  file directly. Keep these keys in sync with the build settings by hand if you
+  change one side.
+-->
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>Session Prep</string>
+	<key>CFBundleDisplayName</key>
+	<string>Session Prep</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.mlhproductions.SessionPrep</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>13.0</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>© Michael Hanson</string>
+	<key>NSDesktopFolderUsageDescription</key>
+	<string>Session Prep needs access to scan the audio folder you select.</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.music</string>
+</dict>
+</plist>

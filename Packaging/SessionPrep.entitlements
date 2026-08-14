@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Reference entitlements for direct-distribution (non-App-Store) sandboxing.
+  Attach via Xcode's Signing & Capabilities tab once this becomes a full
+  App target — add the "App Sandbox" capability, then enable "User Selected
+  File" read/write access, which generates/matches these same two keys.
+-->
+<plist version="1.0">
+<dict>
+	<key>com.apple.security.app-sandbox</key>
+	<true/>
+	<key>com.apple.security.files.user-selected.read-write</key>
+	<true/>
+</dict>
+</plist>
