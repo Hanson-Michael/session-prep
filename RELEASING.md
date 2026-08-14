@@ -22,6 +22,12 @@ a step fails (e.g. notarization coming back `Invalid`).
 
 ## Manual steps
 
+> **Naming note:** if you're publishing more than once in the same month
+> (same marketing Version), the tag and zip filename must still be unique —
+> append the build number, e.g. `v26.8-2` / `SessionPrep-26.8-2.zip`, not
+> just `v26.8` again. The examples below use a single version for brevity;
+> substitute accordingly.
+
 Repeatable steps for shipping a new version through Sparkle. Reference values
 for this project:
 

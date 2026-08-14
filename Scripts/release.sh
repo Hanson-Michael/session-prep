@@ -37,8 +37,11 @@ die() { printf '\n\033[1;31mError:\033[0m %s\n' "$1" >&2; exit 1; }
 VERSION=$(grep -m1 'MARKETING_VERSION = ' "$PBXPROJ" | sed -E 's/.*MARKETING_VERSION = ([^;]+);.*/\1/')
 BUILD=$(grep -m1 'CURRENT_PROJECT_VERSION = ' "$PBXPROJ" | sed -E 's/.*CURRENT_PROJECT_VERSION = ([^;]+);.*/\1/')
 MIN_OS=$(grep -m1 'MACOSX_DEPLOYMENT_TARGET = ' "$PBXPROJ" | sed -E 's/.*MACOSX_DEPLOYMENT_TARGET = ([^;]+);.*/\1/')
-ZIP_NAME="SessionPrep-${VERSION}.zip"
-TAG="v${VERSION}"
+# Build number is part of the tag/filename, not just Version — most months
+# will see several builds under the same marketing Version, and each one
+# needs a distinct GitHub release + asset for this to work.
+ZIP_NAME="SessionPrep-${VERSION}-${BUILD}.zip"
+TAG="v${VERSION}-${BUILD}"
 
 [[ -n "$VERSION" && -n "$BUILD" ]] || die "Could not read MARKETING_VERSION / CURRENT_PROJECT_VERSION from project.pbxproj."
 
@@ -54,6 +57,12 @@ read -r -p "Continue? [y/N] " CONFIRM
 
 command -v gh >/dev/null 2>&1 || die "GitHub CLI not found. Install with: brew install gh, then: gh auth login"
 gh auth status >/dev/null 2>&1 || die "gh is installed but not authenticated. Run: gh auth login"
+
+# Fail fast, before the slow archive/notarize steps, if this exact build was
+# already released (e.g. forgot to bump Build in Xcode before running).
+if gh release view "$TAG" --repo "$GITHUB_REPO" >/dev/null 2>&1; then
+    die "Release $TAG already exists on GitHub. Bump the Build number in Xcode (General tab) and try again."
+fi
 
 # --- Archive ---------------------------------------------------------------
 
@@ -132,7 +141,7 @@ fi
 log "Publishing GitHub Release $TAG"
 gh release create "$TAG" "$ZIP_NAME" \
     --repo "$GITHUB_REPO" \
-    --title "$VERSION" \
+    --title "${VERSION} (build ${BUILD})" \
     --notes "$GH_NOTES" \
     --target main
 
@@ -146,7 +155,7 @@ ITEM_FILE="$BUILD_DIR/item.xml"
 
 cat > "$ITEM_FILE" <<EOF
         <item>
-            <title>Version ${VERSION}</title>
+            <title>Version ${VERSION} (build ${BUILD})</title>
             <sparkle:version>${BUILD}</sparkle:version>
             <sparkle:shortVersionString>${VERSION}</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>${MIN_OS}</sparkle:minimumSystemVersion>
