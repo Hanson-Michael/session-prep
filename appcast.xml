@@ -24,6 +24,27 @@
         <language>en</language>
 
         <item>
+            <title>Version 26.8 (build 3)</title>
+            <sparkle:version>3</sparkle:version>
+            <sparkle:shortVersionString>26.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.5</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Column sorting</li>
+                    <li>Sub folder access.</li>
+                    <li>Multi-selection of files.</li>
+                </ul>
+            ]]></description>
+            <pubDate>Fri, 14 Aug 2026 04:42:39 +0000</pubDate>
+            <enclosure
+                url="https://github.com/Hanson-Michael/session-prep/releases/download/v26.8-3/SessionPrep-26.8-3.zip"
+                sparkle:edSignature="HPIYnqvZZUE738PLu4FBJwKiPZ+ce2t5IxKFt8QMm7YU2BMe1UiqR9HhcNsjEcph0srfFRj2K+tgyj+rniAcAw=="
+                length="11130018"
+                type="application/octet-stream" />
+        </item>
+
+
+        <item>
             <title>Version 26.8 (build 2)</title>
             <sparkle:version>2</sparkle:version>
             <sparkle:shortVersionString>26.8</sparkle:shortVersionString>
