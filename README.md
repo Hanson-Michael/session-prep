@@ -21,9 +21,12 @@ The Xcode project already has code signing, App Sandbox (with User Selected File
 
 If anything doesn't compile or behaves oddly, paste the error or describe it and it'll get fixed directly.
 
+## Updates
+
+Sparkle is wired in — `UpdateChecker.swift` owns an `SPUStandardUpdaterController`, the feed is `appcast.xml` at the repo root (served raw via GitHub), and the app runs unsandboxed to allow the network access and self-replacement Sparkle's install step needs. See `RELEASING.md` for the full cut-a-release checklist (versioning, notarization, signing, and updating the appcast).
+
 ## Deliberately not in this pass
 
-- Sparkle isn't wired in yet — `UpdateChecker.swift` is a stub with a placeholder alert, structured so the real Sparkle calls can drop in later without restructuring the menu/command code. Needs an `appcast.xml`, an EdDSA signing key, and the Sparkle package dependency added to the project.
 - Recursive subfolder scanning.
 - In-app revert/undo.
 
