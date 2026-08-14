@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Used by `xcodebuild -exportArchive` in release.sh. "developer-id" is the
+  export method for direct (non-App-Store) distribution — the same choice
+  Xcode's Organizer > Distribute App > Direct Distribution makes when done
+  by hand.
+-->
+<plist version="1.0">
+<dict>
+	<key>method</key>
+	<string>developer-id</string>
+	<key>teamID</key>
+	<string>9MP82ALK4M</string>
+	<key>signingStyle</key>
+	<string>automatic</string>
+</dict>
+</plist>

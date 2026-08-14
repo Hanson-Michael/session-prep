@@ -6,3 +6,5 @@ DerivedData/
 .swiftpm/xcode/package.xcworkspace/xcuserdata/
 *.dSYM.zip
 *.dSYM
+.release-build/
+*.xcarchive
