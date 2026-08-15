@@ -24,6 +24,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 26.8.154</title>
+            <sparkle:version>26.8.154</sparkle:version>
+            <sparkle:shortVersionString>26.8.154</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.5</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Minor updates.</li>
+                </ul>
+            ]]></description>
+            <pubDate>Sat, 15 Aug 2026 19:58:27 +0000</pubDate>
+            <enclosure
+                url="https://github.com/Hanson-Michael/session-prep/releases/download/v26.8.154/SessionPrep-26.8.154.zip"
+                sparkle:edSignature="AB+Dx5yDBbIqLUreL883O8H/SUvXeRorGc2sJdWQhV8kSlGB6rcUeLX6w4xgzx4T67WW83jf7VlBZWKqHuQhAw=="
+                length="11172263"
+                type="application/octet-stream" />
+        </item>
+
+
+        <item>
             <title>Version 26.8.153</title>
             <sparkle:version>26.8.153</sparkle:version>
             <sparkle:shortVersionString>26.8.153</sparkle:shortVersionString>
