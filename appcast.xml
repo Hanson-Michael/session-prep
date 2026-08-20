@@ -24,6 +24,26 @@
         <language>en</language>
 
         <item>
+            <title>Version 26.8.180</title>
+            <sparkle:version>26.8.180</sparkle:version>
+            <sparkle:shortVersionString>26.8.180</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.5</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Renaming app to IngestIQ </li>
+                    <li>Plus other stuff...</li>
+                </ul>
+            ]]></description>
+            <pubDate>Thu, 20 Aug 2026 03:05:02 +0000</pubDate>
+            <enclosure
+                url="https://github.com/Hanson-Michael/session-prep/releases/download/v26.8.180/IngestIQ-26.8.180.zip"
+                sparkle:edSignature="96U8N6gWT2CIiSPOgHlcPy5cqR8JaX5bYepuPu24ZwfFbaOC2wffp2csJ27cHyVyyAazY9WffkEUiYH8byVqBg=="
+                length="5672025"
+                type="application/octet-stream" />
+        </item>
+
+
+        <item>
             <title>Version 26.8.170</title>
             <sparkle:version>26.8.170</sparkle:version>
             <sparkle:shortVersionString>26.8.170</sparkle:shortVersionString>
