@@ -1,4 +1,4 @@
-# Session Prep
+# IngestIQ
 
 See `SPEC.md` for the full design spec (classification logic, thresholds, folder/suffix scheme, menu structure, distribution plan).
 

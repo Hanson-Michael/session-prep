@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# End-to-end release script for Session Prep. Reads the version/build
+# End-to-end release script for IngestIQ. Reads the version/build
 # straight from the Xcode project (bump those in Xcode's General tab
 # *before* running this), then archives, exports, zips, notarizes, staples,
 # signs for Sparkle, publishes a GitHub Release, writes the appcast.xml
@@ -18,15 +18,21 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-PROJECT="$REPO_ROOT/Session Prep.xcodeproj"
+PROJECT="$REPO_ROOT/IngestIQ.xcodeproj"
 PBXPROJ="$PROJECT/project.pbxproj"
-SCHEME="Session Prep"
-BUNDLE_NAME="Session Prep"
+SCHEME="IngestIQ"
+# PROJECT/SCHEME updated to match the renamed .xcodeproj/scheme. The
+# PBXNativeTarget's internal name/productName are still literally
+# "Session Prep" (Xcode's rename didn't touch those), but that's harmless —
+# xcodebuild resolves -scheme by .xcscheme filename, not the target's
+# internal name, and the .xcscheme's BlueprintName still correctly points
+# at that same internal target name under the hood.
+BUNDLE_NAME="IngestIQ"
 GITHUB_REPO="Hanson-Michael/session-prep"
 NOTARY_PROFILE="session-prep-notary"
 EXPORT_OPTIONS="$REPO_ROOT/Scripts/ExportOptions.plist"
 BUILD_DIR="$REPO_ROOT/.release-build"
-ARCHIVE_PATH="$BUILD_DIR/SessionPrep.xcarchive"
+ARCHIVE_PATH="$BUILD_DIR/IngestIQ.xcarchive"
 EXPORT_PATH="$BUILD_DIR/export"
 
 log() { printf '\n\033[1m== %s ==\033[0m\n' "$1"; }
@@ -37,17 +43,24 @@ die() { printf '\n\033[1;31mError:\033[0m %s\n' "$1" >&2; exit 1; }
 VERSION=$(grep -m1 'MARKETING_VERSION = ' "$PBXPROJ" | sed -E 's/.*MARKETING_VERSION = ([^;]+);.*/\1/')
 BUILD=$(grep -m1 'CURRENT_PROJECT_VERSION = ' "$PBXPROJ" | sed -E 's/.*CURRENT_PROJECT_VERSION = ([^;]+);.*/\1/')
 MIN_OS=$(grep -m1 'MACOSX_DEPLOYMENT_TARGET = ' "$PBXPROJ" | sed -E 's/.*MACOSX_DEPLOYMENT_TARGET = ([^;]+);.*/\1/')
-# Build number is part of the tag/filename, not just Version — most months
-# will see several builds under the same marketing Version, and each one
-# needs a distinct GitHub release + asset for this to work.
-ZIP_NAME="SessionPrep-${VERSION}-${BUILD}.zip"
-TAG="v${VERSION}-${BUILD}"
 
 [[ -n "$VERSION" && -n "$BUILD" ]] || die "Could not read MARKETING_VERSION / CURRENT_PROJECT_VERSION from project.pbxproj."
 
+# Version (YY.MM.Dxx, e.g. 26.8.140) and Build are meant to always be the
+# same number now — one thing to bump per release, not two. If they've
+# drifted apart, that's almost certainly someone editing one field in
+# Xcode's General tab and forgetting the other, so fail loudly here rather
+# than shipping a release where Finder's version and Sparkle's actual
+# comparison key (sparkle:version) disagree.
+[[ "$VERSION" == "$BUILD" ]] || die "Version ($VERSION) and Build ($BUILD) don't match — set both to the same value in Xcode's General tab before releasing."
+
+# The version itself (day + sequence digit) is already unique per release,
+# so it's the only thing that needs to be in the tag/filename.
+ZIP_NAME="IngestIQ-${VERSION}.zip"
+TAG="v${VERSION}"
+
 log "Release plan"
-echo "  Version (marketing): $VERSION"
-echo "  Build (Sparkle compares this): $BUILD"
+echo "  Version / Build: $VERSION"
 echo "  Tag: $TAG"
 echo "  Zip: $ZIP_NAME"
 read -r -p "Continue? [y/N] " CONFIRM
@@ -61,7 +74,7 @@ gh auth status >/dev/null 2>&1 || die "gh is installed but not authenticated. Ru
 # Fail fast, before the slow archive/notarize steps, if this exact build was
 # already released (e.g. forgot to bump Build in Xcode before running).
 if gh release view "$TAG" --repo "$GITHUB_REPO" >/dev/null 2>&1; then
-    die "Release $TAG already exists on GitHub. Bump the Build number in Xcode (General tab) and try again."
+    die "Release $TAG already exists on GitHub. Bump Version/Build in Xcode (General tab) and try again."
 fi
 
 # --- Archive ---------------------------------------------------------------
@@ -141,7 +154,7 @@ fi
 log "Publishing GitHub Release $TAG"
 gh release create "$TAG" "$ZIP_NAME" \
     --repo "$GITHUB_REPO" \
-    --title "${VERSION} (build ${BUILD})" \
+    --title "${VERSION}" \
     --notes "$GH_NOTES" \
     --target main
 
@@ -155,7 +168,7 @@ ITEM_FILE="$BUILD_DIR/item.xml"
 
 cat > "$ITEM_FILE" <<EOF
         <item>
-            <title>Version ${VERSION} (build ${BUILD})</title>
+            <title>Version ${VERSION}</title>
             <sparkle:version>${BUILD}</sparkle:version>
             <sparkle:shortVersionString>${VERSION}</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>${MIN_OS}</sparkle:minimumSystemVersion>
@@ -197,5 +210,5 @@ git push
 rm -rf "$BUILD_DIR"
 
 log "Done"
-echo "Released ${VERSION} (build ${BUILD}) — https://github.com/${GITHUB_REPO}/releases/tag/${TAG}"
-echo "Remember to bump the Version/Build numbers in Xcode before the next release."
+echo "Released ${VERSION} — https://github.com/${GITHUB_REPO}/releases/tag/${TAG}"
+echo "Remember to bump Version and Build (same value) in Xcode before the next release."

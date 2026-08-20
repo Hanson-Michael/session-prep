@@ -8,3 +8,4 @@ DerivedData/
 *.dSYM
 .release-build/
 *.xcarchive
+Reference Files/

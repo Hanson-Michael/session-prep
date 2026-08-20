@@ -9,15 +9,15 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>Session Prep</string>
+	<string>IngestIQ</string>
 	<key>CFBundleDisplayName</key>
-	<string>Session Prep</string>
+	<string>IngestIQ</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.mlhproductions.SessionPrep</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1.0</string>
+	<string>26.8.140</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>26.8.140</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>LSMinimumSystemVersion</key>
@@ -25,7 +25,7 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>© Michael Hanson</string>
 	<key>NSDesktopFolderUsageDescription</key>
-	<string>Session Prep needs access to scan the audio folder you select.</string>
+	<string>IngestIQ needs access to scan the audio folder you select.</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.music</string>
 	<key>SUFeedURL</key>

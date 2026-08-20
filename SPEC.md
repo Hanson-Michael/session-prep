@@ -1,4 +1,4 @@
-# Session Prep
+# IngestIQ
 
 Part of the Music Production app series (after Music Production Budget). Native macOS app that gets a folder of audio files ready for a session: scans and reports every file's format/status, converts stereo files that are secretly mono (dual mono, panned mono, polarity-inverted mono, single-channel-silent) into true mono files, optionally levels/caps files toward safe working levels (Peak Safety and Leveling), and carries each file's broadcast/session metadata (BWF timecode, embedded tags) forward into every file it writes — all while leaving genuine stereo files' channel content untouched unless you deliberately opt them in.
 
@@ -135,7 +135,7 @@ None in v1. Originals are always preserved (moved, never deleted), so recovery i
 
 ## Menu structure
 
-**Session Prep** (app menu): About Session Prep · Settings… (⌘,) · Services · Hide Session Prep (⌘H) · Hide Others (⌥⌘H) · Show All · Quit Session Prep (⌘Q)
+**IngestIQ** (app menu): About IngestIQ · Settings… (⌘,) · Services · Hide IngestIQ (⌘H) · Hide Others (⌥⌘H) · Show All · Quit IngestIQ (⌘Q)
 
 **File**: Open Folder… (⌘O)
 
@@ -144,7 +144,7 @@ None in v1. Originals are always preserved (moved, never deleted), so recovery i
 ## Visual design
 
 - Main working window: new, clean, crisp look — not a reuse of the Budget app's exact chrome, but keeps the same color palette (vs. plain white).
-- About window and update-progress window: **kept consistent** with the Budget app for series branding — including the "Communicating with aliens…" radar-ping animation treatment. Same idea reused for Session Prep's own scan/convert progress indicator, not just app updates.
+- About window and update-progress window: **kept consistent** with the Budget app for series branding — including the "Communicating with aliens…" radar-ping animation treatment. Same idea reused for IngestIQ's own scan/convert progress indicator, not just app updates.
 - Color palette carried over: light background `#fdfcf8`, dark background `#2b2a28`, accent `#4a90d9`, track `#e3e0d8` (light) / `#4a4844` (dark).
 
 ## Channel preview playback
