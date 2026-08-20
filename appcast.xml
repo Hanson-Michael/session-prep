@@ -24,6 +24,30 @@
         <language>en</language>
 
         <item>
+            <title>Version 26.8.182</title>
+            <sparkle:version>26.8.182</sparkle:version>
+            <sparkle:shortVersionString>26.8.182</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.5</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>After your update:</li>
+                    <li>Please go to your Applications folder and rename Session Prep to:</li>
+                    <li>...</li>
+                    <li>IngestIQ</li>
+                    <li>...</li>
+                    <li>I didn't feel like sending you a new pkg file.</li>
+                </ul>
+            ]]></description>
+            <pubDate>Thu, 20 Aug 2026 03:16:39 +0000</pubDate>
+            <enclosure
+                url="https://github.com/Hanson-Michael/session-prep/releases/download/v26.8.182/IngestIQ-26.8.182.zip"
+                sparkle:edSignature="4GTrlnTORiquHp5T2CO2GvEtaOn/o5GHs6YzaEF+UU4ZIo4AOzvg4rjjSuvrcOaXPMn3BxTpUDSe1jI+zIUsCA=="
+                length="5672030"
+                type="application/octet-stream" />
+        </item>
+
+
+        <item>
             <title>Version 26.8.180</title>
             <sparkle:version>26.8.180</sparkle:version>
             <sparkle:shortVersionString>26.8.180</sparkle:shortVersionString>
