@@ -24,6 +24,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 26.8.201</title>
+            <sparkle:version>26.8.201</sparkle:version>
+            <sparkle:shortVersionString>26.8.201</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.5</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Suggested Gain value displays orange if there is a gain adjustment suggested.</li>
+                </ul>
+            ]]></description>
+            <pubDate>Fri, 21 Aug 2026 04:41:56 +0000</pubDate>
+            <enclosure
+                url="https://github.com/Hanson-Michael/session-prep/releases/download/v26.8.201/IngestIQ-26.8.201.zip"
+                sparkle:edSignature="GkfRaYBVHEYUR7uZLqfjZgYP0oGvv4/wEraojlCzD58OaakToDzjlfmwn9cYhDr+NK+j79D7E0ijm/arsrbmBA=="
+                length="5672159"
+                type="application/octet-stream" />
+        </item>
+
+
+        <item>
             <title>Version 26.8.200</title>
             <sparkle:version>26.8.200</sparkle:version>
             <sparkle:shortVersionString>26.8.200</sparkle:shortVersionString>
