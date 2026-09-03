@@ -24,6 +24,25 @@
         <language>en</language>
 
         <item>
+            <title>Version 26.9.200</title>
+            <sparkle:version>26.9.200</sparkle:version>
+            <sparkle:shortVersionString>26.9.200</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.5</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>icon</li>
+                </ul>
+            ]]></description>
+            <pubDate>Thu, 03 Sep 2026 13:34:07 +0000</pubDate>
+            <enclosure
+                url="https://github.com/Hanson-Michael/session-prep/releases/download/v26.9.200/IngestIQ-26.9.200.zip"
+                sparkle:edSignature="o3sWZ+K4+vQe2BV+k7Njq9fw0PPnXBqSgUEHznIKIFcPNm4k/UkanvCavxYK6Ve5elmycQ5W5FFtFKyMB84BAg=="
+                length="6224539"
+                type="application/octet-stream" />
+        </item>
+
+
+        <item>
             <title>Version 26.8.241</title>
             <sparkle:version>26.8.241</sparkle:version>
             <sparkle:shortVersionString>26.8.241</sparkle:shortVersionString>
