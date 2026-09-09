@@ -24,6 +24,63 @@
         <language>en</language>
 
         <item>
+            <title>Version 26.9.604</title>
+            <sparkle:version>26.9.604</sparkle:version>
+            <sparkle:shortVersionString>26.9.604</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Min MacOS v14.0 Sonoma</li>
+                </ul>
+            ]]></description>
+            <pubDate>Wed, 09 Sep 2026 01:58:20 +0000</pubDate>
+            <enclosure
+                url="https://github.com/Hanson-Michael/session-prep/releases/download/v26.9.604/IngestIQ-26.9.604.zip"
+                sparkle:edSignature="1XuTzQyqGCJ/Yi8+jmmv3LcOVHElv1Mp/qNox98sYYGr6nPPYwvV27VZ4kU+erIWo8AZlEDlZvHV1ql6sN/hBg=="
+                length="6307686"
+                type="application/octet-stream" />
+        </item>
+
+
+        <item>
+            <title>Version 26.9.603</title>
+            <sparkle:version>26.9.603</sparkle:version>
+            <sparkle:shortVersionString>26.9.603</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>Min MacOS v14.0 Sonoma</li>
+                </ul>
+            ]]></description>
+            <pubDate>Wed, 09 Sep 2026 01:52:59 +0000</pubDate>
+            <enclosure
+                url="https://github.com/Hanson-Michael/session-prep/releases/download/v26.9.603/IngestIQ-26.9.603.zip"
+                sparkle:edSignature="nPwOJiv9WcR0NV7yHZi+BVshught70Pg4zViDnQxwD04iRNLoguqSImX7Nyw2+nP1QdTJz3fprh/pGzPMBp1Cg=="
+                length="6307675"
+                type="application/octet-stream" />
+        </item>
+
+
+        <item>
+            <title>Version 26.9.602</title>
+            <sparkle:version>26.9.602</sparkle:version>
+            <sparkle:shortVersionString>26.9.602</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[
+                <ul>
+                    <li>min macOS v14.0 Sonoma</li>
+                </ul>
+            ]]></description>
+            <pubDate>Wed, 09 Sep 2026 01:29:14 +0000</pubDate>
+            <enclosure
+                url="https://github.com/Hanson-Michael/session-prep/releases/download/v26.9.602/IngestIQ-26.9.602.zip"
+                sparkle:edSignature="X+o8WoXilr+06b7dvMpK4hLtKZB7uJeOckLmqpZL36GgaiXVOMeeNiJ1o+OzYGG7ls7vH1TdPXKa1MWZL2VQDg=="
+                length="6307670"
+                type="application/octet-stream" />
+        </item>
+
+
+        <item>
             <title>Version 26.9.601</title>
             <sparkle:version>26.9.601</sparkle:version>
             <sparkle:shortVersionString>26.9.601</sparkle:shortVersionString>
